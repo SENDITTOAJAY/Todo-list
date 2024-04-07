@@ -27,3 +27,15 @@ function getTodo(value) {
       message.classList.toggle("error");
     }, 2000);
   });
+  todo.appendChild(closeEl);
+  todo.classList.add("todo");
+  return todo;
+}
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  let value = input.value;
+  if (!value.trim()) return;
+  output.appendChild(getTodo(value));
+  input.value = "";
+});
