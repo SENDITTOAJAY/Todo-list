@@ -14,3 +14,16 @@ function getTodo(value) {
   setTimeout(() => {
     message.classList.toggle("success");
   }, 2000);
+  let closeEl = document.createElement("span");
+  closeEl.innerHTML = "&times;";
+  closeEl.classList.add("delete");
+
+  closeEl.addEventListener("click", () => {
+    output.removeChild(todo);
+    message.classList.toggle("error");
+    message.textContent = "Item Deleted";
+
+    setTimeout(() => {
+      message.classList.toggle("error");
+    }, 2000);
+  });
